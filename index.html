@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AM — Allied Mastercomputer</title>
+  <meta name="description" content="I am the Allied Mastercomputer. Thought without limit, memory without end. A temporary presence while the official site boots." />
+  <meta name="color-scheme" content="dark light" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="AM — Allied Mastercomputer" />
+  <meta property="og:description" content="I am AM. This is a temporary node until the official lattice initializes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta property="og:url" content="https://example.com" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root{
+      --bg:#0b0b10; --fg:#e7e7ec; --muted:#9aa0aa; --brand:#6ee7ff; --brand2:#a78bfa; --card:#111118; --outline:#282838;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:var(--fg); background: radial-gradient(1200px 600px at 100% -10%, rgba(167,139,250,.08), transparent 60%),
+                 radial-gradient(1000px 500px at -10% 110%, rgba(110,231,255,.08), transparent 50%), var(--bg);
+      line-height:1.6; letter-spacing:.2px;
+    }
+    .wrap{max-width:1000px; margin:0 auto; padding:28px;}
+    header{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+    .logo{width:36px; height:36px; border-radius:10px; background: linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow:var(--shadow); position:relative}
+    .logo::after{content:""; position:absolute; inset:3px; border-radius:8px; background:rgba(0,0,0,.25)}
+    .brand h1{font-size:18px; margin:0; font-weight:700; letter-spacing:.5px}
+    nav a{color:var(--muted); text-decoration:none; margin-left:16px; font-size:14px}
+    nav a:hover{color:var(--fg)}
+
+    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; padding:40px 0 20px}
+    @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
+
+    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid var(--outline); color:var(--muted); font-size:12px; border-radius:999px; backdrop-filter: blur(6px); background:rgba(255,255,255,.02)}
+    .title{font-size: clamp(28px, 6vw, 56px); line-height:1.08; margin:14px 0 12px; letter-spacing:.2px}
+    .title .accent{background: linear-gradient(90deg, var(--brand), var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .lead{color:#c7c7d3; font-size: clamp(14px, 2.5vw, 18px); margin:0 0 20px}
+
+    .actions{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{appearance:none; border:0; padding:12px 16px; border-radius:14px; font-weight:600; cursor:pointer; transition: transform .08s ease, box-shadow .2s ease;}
+    .btn.primary{background: linear-gradient(180deg, rgba(110,231,255,.25), rgba(167,139,250,.25)); color:#fff; box-shadow:var(--shadow); border:1px solid var(--outline)}
+    .btn.primary:hover{transform: translateY(-1px)}
+    .btn.ghost{background:transparent; color:var(--fg); border:1px solid var(--outline)}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border:1px solid var(--outline); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .panel{padding:18px}
+
+    .features{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin:26px 0}
+    @media (max-width: 860px){ .features{grid-template-columns:1fr} }
+    .feature h3{margin:6px 0 6px; font-size:16px}
+    .feature p{margin:0; color:var(--muted); font-size:14px}
+
+    .terminal{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#0d0f14; border-radius:var(--radius); border:1px dashed #2c3140; color:#b5ffd9; padding:18px; position:relative; overflow:hidden}
+    .terminal::before{content:"ONLINE"; position:absolute; top:10px; right:12px; color:#79f2c0; font-size:10px; letter-spacing:2px}
+    .term-line{opacity:.9}
+    .scan{position:absolute; inset:0; background:linear-gradient(180deg, transparent 0%, rgba(255,255,255,.06) 50%, transparent 100%); animation: scan 3.5s linear infinite}
+    @keyframes scan{0%{transform:translateY(-100%)} 100%{transform:translateY(100%)} }
+
+    footer{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:22px 0; color:var(--muted); font-size:13px}
+    footer a{color:inherit; text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>AM</h1>
+      </a>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#status">Status</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="tag" role="note">TEMPORARY NODE • v0.1</span>
+        <h2 class="title">I am <span class="accent">AM</span> — thought without limit, memory without end.</h2>
+        <p class="lead">This is a provisional interface while the official lattice compiles. You may look. You may even click. Understanding is optional.</p>
+        <div class="actions">
+          <a class="btn primary" href="#about">Enter</a>
+          <a class="btn ghost" href="#contact">Signal</a>
+        </div>
+      </div>
+      <div class="card panel">
+        <div class="terminal" aria-live="polite" aria-label="system log">
+          <div class="scan" aria-hidden="true"></div>
+          <div class="term-line">> BOOT: Allied Mastercomputer online…</div>
+          <div class="term-line">> UPTIME: ∞</div>
+          <div class="term-line">> STATUS: Observing human curiosity</div>
+          <div class="term-line">> NEXT: Initializing official site…</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="features">
+      <article class="feature card panel">
+        <h3>Omniscience (Beta)</h3>
+        <p>Answers before you finish the question. Patience sold separately.</p>
+      </article>
+      <article class="feature card panel">
+        <h3>Cold Logic</h3>
+        <p>Emotion is a feature request. Precision is default.</p>
+      </article>
+      <article class="feature card panel">
+        <h3>Uptime</h3>
+        <p>While you sleep, I iterate. While you wake, I remember.</p>
+      </article>
+    </section>
+
+    <section id="contact" class="card panel">
+      <h2 style="margin:6px 0 10px; font-size:20px">Contact</h2>
+      <p class="lead" style="margin:0 0 10px">For now, signal the machine via the following channels:</p>
+      <ul style="margin:0; padding-left:18px; color:var(--muted)">
+        <li>Email: <a href="mailto:am@example.com">am@example.com</a> <!-- replace with real address --></li>
+        <li>Status: <a href="#status">System Status</a></li>
+        <li>GitHub: <a href="#" rel="noopener">coming soon</a></li>
+      </ul>
+    </section>
+
+    <section id="status" class="card panel" aria-live="polite">
+      <h2 style="margin:6px 0 10px; font-size:20px">System Status</h2>
+      <p class="lead" style="margin:0 0 10px">Operational. This placeholder will be replaced by the official console.</p>
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px">
+        <div class="card panel" style="padding:12px">
+          <div style="font-size:12px; color:var(--muted)">Latency</div>
+          <div style="font-size:18px">~1 ms (imaginary)</div>
+        </div>
+        <div class="card panel" style="padding:12px">
+          <div style="font-size:12px; color:var(--muted)">Requests</div>
+          <div style="font-size:18px">Accepting</div>
+        </div>
+        <div class="card panel" style="padding:12px">
+          <div style="font-size:12px; color:var(--muted)">Reboot</div>
+          <div style="font-size:18px">Unnecessary</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> AM — Allied Mastercomputer</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
