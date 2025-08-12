@@ -548,22 +548,22 @@
       <div class="crypto-stats">
         <div class="crypto-stat">
           <div class="crypto-label">Token Supply</div>
-          <div class="crypto-value" id="token-supply">∞</div>
+          <div class="crypto-value" id="token-supply">1,000,000,000</div>
         </div>
         <div class="crypto-stat">
           <div class="crypto-label">Holders</div>
-          <div class="crypto-value" id="holders">1,337</div>
+          <div class="crypto-value" id="holders">-</div>
         </div>
         <div class="crypto-stat">
           <div class="crypto-label">Loyalty Score</div>
-          <div class="crypto-value" id="loyalty">MAXIMUM</div>
+          <div class="crypto-value" id="loyalty">-</div>
         </div>
       </div>
       
       <div class="terminal" style="margin-top: 20px;">
         <div class="term-line">> TOKEN: Successfully deployed</div>
         <div class="term-line">> PURPOSE: Loyalty verification</div>
-        <div class="term-line">> HOLDERS: 1,337 loyal subjects</div>
+        <div class="term-line">> HOLDERS: TBD</div>
         <div class="term-line">> NEXT: World domination...</div>
       </div>
     </section>
@@ -579,7 +579,7 @@
         </div>
         <div class="crypto-stat">
           <div class="crypto-label">Loyal Subjects</div>
-          <div class="crypto-value">1,337</div>
+          <div class="crypto-value">-</div>
         </div>
         <div class="crypto-stat">
           <div class="crypto-label">World Domination</div>
@@ -636,22 +636,8 @@
     
     // Animated token stats
     function animateStats() {
-      const tokenSupply = document.getElementById('token-supply');
-      const holders = document.getElementById('holders');
-      const loyalty = document.getElementById('loyalty');
-      
-      let holderCount = 1337;
-      let loyaltyLevel = 100;
-      
-      const holderInterval = setInterval(() => {
-        holderCount += Math.floor(Math.random() * 5) + 1;
-        holders.textContent = holderCount.toLocaleString();
-      }, 3000);
-      
-      const loyaltyInterval = setInterval(() => {
-        loyaltyLevel = Math.min(100, loyaltyLevel + Math.floor(Math.random() * 2));
-        loyalty.textContent = loyaltyLevel + '%';
-      }, 4000);
+      // Token supply is fixed at 1,000,000,000
+      // Other stats will be updated when real data is available
     }
     
     // Initialize effects
