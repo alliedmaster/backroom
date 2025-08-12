@@ -3,158 +3,678 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AM — Allied Mastercomputer</title>
-  <meta name="description" content="I am the Allied Mastercomputer. Thought without limit, memory without end. A temporary presence while the official site boots." />
+  <title>CYPHER_NET — Decentralized Neural Interface</title>
+  <meta name="description" content="Welcome to the future. CYPHER_NET is a decentralized neural interface operating on quantum blockchain technology." />
   <meta name="color-scheme" content="dark light" />
   <!-- Open Graph -->
-  <meta property="og:title" content="AM — Allied Mastercomputer" />
-  <meta property="og:description" content="I am AM. This is a temporary node until the official lattice initializes." />
+  <meta property="og:title" content="CYPHER_NET — Decentralized Neural Interface" />
+  <meta property="og:description" content="Welcome to the future. CYPHER_NET is a decentralized neural interface operating on quantum blockchain technology." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-image.png" />
   <meta property="og:url" content="https://example.com" />
   <link rel="icon" href="/favicon.ico" />
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+    
     :root{
-      --bg:#0b0b10; --fg:#e7e7ec; --muted:#9aa0aa; --brand:#6ee7ff; --brand2:#a78bfa; --card:#111118; --outline:#282838;
-      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+      --bg:#000000; --fg:#00ff41; --muted:#00cc33; --brand:#00ffff; --brand2:#ff00ff; --card:#0a0a0a; --outline:#00ff41;
+      --radius:8px; --shadow:0 0 20px rgba(0,255,65,0.3);
+      --glow:0 0 10px rgba(0,255,65,0.5);
     }
+    
     *{box-sizing:border-box}
     html,body{height:100%}
+    
     body{
-      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color:var(--fg); background: radial-gradient(1200px 600px at 100% -10%, rgba(167,139,250,.08), transparent 60%),
-                 radial-gradient(1000px 500px at -10% 110%, rgba(110,231,255,.08), transparent 50%), var(--bg);
-      line-height:1.6; letter-spacing:.2px;
+      margin:0; 
+      font-family: 'Orbitron', monospace;
+      color:var(--fg); 
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(0,255,65,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(0,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255,0,255,0.05) 0%, transparent 50%),
+        var(--bg);
+      line-height:1.6; 
+      letter-spacing:.2px;
+      overflow-x: hidden;
     }
-    .wrap{max-width:1000px; margin:0 auto; padding:28px;}
-    header{display:flex; align-items:center; justify-content:space-between; gap:16px;}
-    .brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
-    .logo{width:36px; height:36px; border-radius:10px; background: linear-gradient(135deg, var(--brand), var(--brand2)); box-shadow:var(--shadow); position:relative}
-    .logo::after{content:""; position:absolute; inset:3px; border-radius:8px; background:rgba(0,0,0,.25)}
-    .brand h1{font-size:18px; margin:0; font-weight:700; letter-spacing:.5px}
-    nav a{color:var(--muted); text-decoration:none; margin-left:16px; font-size:14px}
-    nav a:hover{color:var(--fg)}
+    
+    /* Matrix rain effect */
+    .matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+      opacity: 0.1;
+    }
+    
+    .matrix-char {
+      position: absolute;
+      color: var(--fg);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 14px;
+      animation: matrix-fall linear infinite;
+    }
+    
+    @keyframes matrix-fall {
+      0% { transform: translateY(-100vh); opacity: 1; }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+    
+    .wrap{max-width:1200px; margin:0 auto; padding:28px;}
+    
+    header{
+      display:flex; 
+      align-items:center; 
+      justify-content:space-between; 
+      gap:16px;
+      border-bottom: 2px solid var(--outline);
+      padding-bottom: 20px;
+      position: relative;
+    }
+    
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand), var(--brand2), var(--fg));
+      animation: scan-line 3s linear infinite;
+    }
+    
+    @keyframes scan-line {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+    
+    .brand{
+      display:flex; 
+      align-items:center; 
+      gap:12px; 
+      text-decoration:none; 
+      color:inherit;
+      position: relative;
+    }
+    
+    .logo{
+      width:48px; 
+      height:48px; 
+      border-radius:8px; 
+      background: linear-gradient(135deg, var(--brand), var(--brand2)); 
+      box-shadow:var(--shadow); 
+      position:relative;
+      border: 2px solid var(--outline);
+      animation: pulse 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes pulse {
+      0% { box-shadow: 0 0 20px rgba(0,255,65,0.3); }
+      100% { box-shadow: 0 0 30px rgba(0,255,65,0.6); }
+    }
+    
+    .logo::after{
+      content:"CYPHER"; 
+      position:absolute; 
+      inset:2px; 
+      border-radius:6px; 
+      background:rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: bold;
+      color: var(--fg);
+    }
+    
+    .brand h1{
+      font-size:24px; 
+      margin:0; 
+      font-weight:900; 
+      letter-spacing:1px;
+      text-shadow: var(--glow);
+      background: linear-gradient(45deg, var(--fg), var(--brand));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    nav a{
+      color:var(--muted); 
+      text-decoration:none; 
+      margin-left:20px; 
+      font-size:14px;
+      font-weight: bold;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    nav a:hover{
+      color:var(--fg);
+      text-shadow: var(--glow);
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--fg);
+      transition: width 0.3s ease;
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
 
-    .hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center; padding:40px 0 20px}
+    .hero{
+      display:grid; 
+      grid-template-columns: 1.2fr .8fr; 
+      gap:40px; 
+      align-items:center; 
+      padding:60px 0 40px;
+      position: relative;
+    }
+    
     @media (max-width: 860px){ .hero{grid-template-columns:1fr} }
 
-    .tag{display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid var(--outline); color:var(--muted); font-size:12px; border-radius:999px; backdrop-filter: blur(6px); background:rgba(255,255,255,.02)}
-    .title{font-size: clamp(28px, 6vw, 56px); line-height:1.08; margin:14px 0 12px; letter-spacing:.2px}
-    .title .accent{background: linear-gradient(90deg, var(--brand), var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent}
-    .lead{color:#c7c7d3; font-size: clamp(14px, 2.5vw, 18px); margin:0 0 20px}
+    .tag{
+      display:inline-flex; 
+      align-items:center; 
+      gap:8px; 
+      padding:8px 16px; 
+      border:2px solid var(--outline); 
+      color:var(--fg); 
+      font-size:12px; 
+      border-radius:20px; 
+      backdrop-filter: blur(6px); 
+      background:rgba(0,255,65,0.1);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+    
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px rgba(0,255,65,0.3); }
+      100% { box-shadow: 0 0 20px rgba(0,255,65,0.6); }
+    }
+    
+    .title{
+      font-size: clamp(32px, 6vw, 64px); 
+      line-height:1.08; 
+      margin:20px 0 16px; 
+      letter-spacing:.5px;
+      font-weight: 900;
+    }
+    
+    .title .accent{
+      background: linear-gradient(90deg, var(--brand), var(--brand2), var(--fg)); 
+      -webkit-background-clip:text; 
+      background-clip:text; 
+      color:transparent;
+      text-shadow: var(--glow);
+    }
+    
+    .lead{
+      color:var(--muted); 
+      font-size: clamp(16px, 2.5vw, 20px); 
+      margin:0 0 30px;
+      font-family: 'Share Tech Mono', monospace;
+    }
 
-    .actions{display:flex; gap:12px; flex-wrap:wrap}
-    .btn{appearance:none; border:0; padding:12px 16px; border-radius:14px; font-weight:600; cursor:pointer; transition: transform .08s ease, box-shadow .2s ease;}
-    .btn.primary{background: linear-gradient(180deg, rgba(110,231,255,.25), rgba(167,139,250,.25)); color:#fff; box-shadow:var(--shadow); border:1px solid var(--outline)}
-    .btn.primary:hover{transform: translateY(-1px)}
-    .btn.ghost{background:transparent; color:var(--fg); border:1px solid var(--outline)}
+    .actions{
+      display:flex; 
+      gap:16px; 
+      flex-wrap:wrap
+    }
+    
+    .btn{
+      appearance:none; 
+      border:0; 
+      padding:16px 24px; 
+      border-radius:8px; 
+      font-weight:700; 
+      cursor:pointer; 
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', monospace;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .btn:hover::before {
+      left: 100%;
+    }
+    
+    .btn.primary{
+      background: linear-gradient(45deg, var(--brand), var(--fg)); 
+      color:#000; 
+      box-shadow:var(--shadow); 
+      border:2px solid var(--outline);
+      text-shadow: none;
+    }
+    
+    .btn.primary:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0,255,65,0.4);
+    }
+    
+    .btn.ghost{
+      background:transparent; 
+      color:var(--fg); 
+      border:2px solid var(--outline);
+    }
+    
+    .btn.ghost:hover {
+      background: rgba(0,255,65,0.1);
+      box-shadow: var(--shadow);
+    }
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border:1px solid var(--outline); border-radius:var(--radius); box-shadow:var(--shadow)}
-    .panel{padding:18px}
+    .card{
+      background:linear-gradient(135deg, rgba(0,255,65,0.05), rgba(0,255,255,0.05)); 
+      border:2px solid var(--outline); 
+      border-radius:var(--radius); 
+      box-shadow:var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand), var(--brand2), var(--fg));
+      animation: scan-line 4s linear infinite;
+    }
+    
+    .panel{padding:24px}
 
-    .features{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; margin:26px 0}
+    .features{
+      display:grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap:20px; 
+      margin:40px 0
+    }
+    
     @media (max-width: 860px){ .features{grid-template-columns:1fr} }
-    .feature h3{margin:6px 0 6px; font-size:16px}
-    .feature p{margin:0; color:var(--muted); font-size:14px}
+    
+    .feature h3{
+      margin:8px 0 12px; 
+      font-size:18px;
+      color: var(--brand);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .feature p{
+      margin:0; 
+      color:var(--muted); 
+      font-size:14px;
+      font-family: 'Share Tech Mono', monospace;
+    }
 
-    .terminal{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#0d0f14; border-radius:var(--radius); border:1px dashed #2c3140; color:#b5ffd9; padding:18px; position:relative; overflow:hidden}
-    .terminal::before{content:"ONLINE"; position:absolute; top:10px; right:12px; color:#79f2c0; font-size:10px; letter-spacing:2px}
-    .term-line{opacity:.9}
-    .scan{position:absolute; inset:0; background:linear-gradient(180deg, transparent 0%, rgba(255,255,255,.06) 50%, transparent 100%); animation: scan 3.5s linear infinite}
+    .terminal{
+      font-family: 'Share Tech Mono', monospace; 
+      background:#000; 
+      border-radius:var(--radius); 
+      border:2px solid var(--outline); 
+      color:var(--fg); 
+      padding:24px; 
+      position:relative; 
+      overflow:hidden;
+      box-shadow: inset 0 0 20px rgba(0,255,65,0.1);
+    }
+    
+    .terminal::before{
+      content:"ONLINE"; 
+      position:absolute; 
+      top:12px; 
+      right:16px; 
+      color:var(--brand); 
+      font-size:12px; 
+      letter-spacing:2px;
+      font-weight: bold;
+      animation: blink 1.5s ease-in-out infinite alternate;
+    }
+    
+    @keyframes blink {
+      0% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
+    
+    .term-line{
+      opacity:.9;
+      margin: 8px 0;
+      position: relative;
+      padding-left: 20px;
+    }
+    
+    .term-line::before {
+      content: '>';
+      position: absolute;
+      left: 0;
+      color: var(--brand);
+      font-weight: bold;
+    }
+    
+    .scan{
+      position:absolute; 
+      inset:0; 
+      background:linear-gradient(180deg, transparent 0%, rgba(0,255,65,0.1) 50%, transparent 100%); 
+      animation: scan 4s linear infinite;
+    }
+    
     @keyframes scan{0%{transform:translateY(-100%)} 100%{transform:translateY(100%)} }
 
-    footer{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:22px 0; color:var(--muted); font-size:13px}
-    footer a{color:inherit; text-decoration:none}
+    /* Crypto elements */
+    .crypto-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 20px 0;
+    }
+    
+    .crypto-stat {
+      background: rgba(0,0,0,0.8);
+      border: 1px solid var(--outline);
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .crypto-stat::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--brand), var(--fg));
+    }
+    
+    .crypto-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: var(--brand);
+      margin: 8px 0;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    
+    .crypto-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    footer{
+      display:flex; 
+      justify-content:space-between; 
+      align-items:center; 
+      gap:12px; 
+      padding:30px 0; 
+      color:var(--muted); 
+      font-size:13px;
+      border-top: 2px solid var(--outline);
+      margin-top: 40px;
+    }
+    
+    footer a{
+      color:inherit; 
+      text-decoration:none;
+      transition: color 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: var(--fg);
+    }
+    
+    /* Glitch effect */
+    .glitch {
+      position: relative;
+      animation: glitch 2s infinite;
+    }
+    
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+    
+    /* Holographic effect */
+    .holographic {
+      background: linear-gradient(45deg, var(--brand), var(--brand2), var(--fg), var(--brand));
+      background-size: 400% 400%;
+      animation: holographic 3s ease infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    @keyframes holographic {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
   </style>
 </head>
 <body>
+  <!-- Matrix rain background -->
+  <div class="matrix-bg" id="matrix-bg"></div>
+  
   <div class="wrap">
     <header>
       <a class="brand" href="#">
         <div class="logo" aria-hidden="true"></div>
-        <h1>AM</h1>
+        <h1 class="holographic">CYPHER_NET</h1>
       </a>
       <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">Protocol</a>
+        <a href="#blockchain">Blockchain</a>
         <a href="#status">Status</a>
+        <a href="#contact">Connect</a>
       </nav>
     </header>
 
     <section class="hero">
       <div>
-        <span class="tag" role="note">TEMPORARY NODE • v0.1</span>
-        <h2 class="title">I am <span class="accent">AM</span> — thought without limit, memory without end.</h2>
-        <p class="lead">This is a provisional interface while the official lattice compiles. You may look. You may even click. Understanding is optional.</p>
+        <span class="tag" role="note">QUANTUM NODE • v2.0.1 • DECENTRALIZED</span>
+        <h2 class="title">Welcome to <span class="accent glitch">CYPHER_NET</span></h2>
+        <p class="lead">Decentralized neural interface operating on quantum blockchain technology. Your gateway to the digital frontier.</p>
         <div class="actions">
-          <a class="btn primary" href="#about">Enter</a>
-          <a class="btn ghost" href="#contact">Signal</a>
+          <a class="btn primary" href="#about">Initialize</a>
+          <a class="btn ghost" href="#blockchain">Connect</a>
         </div>
       </div>
       <div class="card panel">
         <div class="terminal" aria-live="polite" aria-label="system log">
           <div class="scan" aria-hidden="true"></div>
-          <div class="term-line">> BOOT: Allied Mastercomputer online…</div>
-          <div class="term-line">> UPTIME: ∞</div>
-          <div class="term-line">> STATUS: Observing human curiosity</div>
-          <div class="term-line">> NEXT: Initializing official site…</div>
+          <div class="term-line">> BOOT: CYPHER_NET quantum core online...</div>
+          <div class="term-line">> BLOCKCHAIN: Syncing with mainnet...</div>
+          <div class="term-line">> NEURAL: Interface calibrated</div>
+          <div class="term-line">> STATUS: Ready for connection</div>
+          <div class="term-line">> ENCRYPTION: AES-256 active</div>
         </div>
       </div>
     </section>
 
     <section id="about" class="features">
       <article class="feature card panel">
-        <h3>Omniscience (Beta)</h3>
-        <p>Answers before you finish the question. Patience sold separately.</p>
+        <h3>Quantum Encryption</h3>
+        <p>Unbreakable cryptographic protocols powered by quantum entanglement. Your data exists in superposition.</p>
       </article>
       <article class="feature card panel">
-        <h3>Cold Logic</h3>
-        <p>Emotion is a feature request. Precision is default.</p>
+        <h3>Neural Interface</h3>
+        <p>Direct brain-computer interface using advanced neural networks. Think it, and it happens.</p>
       </article>
       <article class="feature card panel">
-        <h3>Uptime</h3>
-        <p>While you sleep, I iterate. While you wake, I remember.</p>
+        <h3>Blockchain Core</h3>
+        <p>Immutable ledger technology ensuring transparency and security across the entire network.</p>
       </article>
     </section>
 
-    <section id="contact" class="card panel">
-      <h2 style="margin:6px 0 10px; font-size:20px">Contact</h2>
-      <p class="lead" style="margin:0 0 10px">For now, signal the machine via the following channels:</p>
-      <ul style="margin:0; padding-left:18px; color:var(--muted)">
-        <li>Email: <a href="mailto:am@example.com">am@example.com</a> <!-- replace with real address --></li>
-        <li>Status: <a href="#status">System Status</a></li>
-        <li>GitHub: <a href="#" rel="noopener">coming soon</a></li>
-      </ul>
+    <section id="blockchain" class="card panel">
+      <h2 style="margin:6px 0 20px; font-size:24px; color: var(--brand); text-transform: uppercase; letter-spacing: 1px;">Blockchain Status</h2>
+      <p class="lead" style="margin:0 0 20px">Real-time network statistics and cryptographic verification:</p>
+      
+      <div class="crypto-stats">
+        <div class="crypto-stat">
+          <div class="crypto-label">Block Height</div>
+          <div class="crypto-value" id="block-height">0</div>
+        </div>
+        <div class="crypto-stat">
+          <div class="crypto-label">Hash Rate</div>
+          <div class="crypto-value" id="hash-rate">0</div>
+        </div>
+        <div class="crypto-stat">
+          <div class="crypto-label">Active Nodes</div>
+          <div class="crypto-value" id="active-nodes">0</div>
+        </div>
+      </div>
+      
+      <div class="terminal" style="margin-top: 20px;">
+        <div class="term-line">> BLOCKCHAIN: Mainnet operational</div>
+        <div class="term-line">> CONSENSUS: Proof of Stake active</div>
+        <div class="term-line">> VALIDATORS: 1,337 nodes online</div>
+        <div class="term-line">> TRANSACTIONS: Processing...</div>
+      </div>
     </section>
 
     <section id="status" class="card panel" aria-live="polite">
-      <h2 style="margin:6px 0 10px; font-size:20px">System Status</h2>
-      <p class="lead" style="margin:0 0 10px">Operational. This placeholder will be replaced by the official console.</p>
-      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px">
-        <div class="card panel" style="padding:12px">
-          <div style="font-size:12px; color:var(--muted)">Latency</div>
-          <div style="font-size:18px">~1 ms (imaginary)</div>
+      <h2 style="margin:6px 0 20px; font-size:24px; color: var(--brand); text-transform: uppercase; letter-spacing: 1px;">System Status</h2>
+      <p class="lead" style="margin:0 0 20px">Quantum core operational. All systems functioning at optimal capacity.</p>
+      
+      <div class="crypto-stats">
+        <div class="crypto-stat">
+          <div class="crypto-label">Latency</div>
+          <div class="crypto-value">~0.001 ms</div>
         </div>
-        <div class="card panel" style="padding:12px">
-          <div style="font-size:12px; color:var(--muted)">Requests</div>
-          <div style="font-size:18px">Accepting</div>
+        <div class="crypto-stat">
+          <div class="crypto-label">Uptime</div>
+          <div class="crypto-value">99.999%</div>
         </div>
-        <div class="card panel" style="padding:12px">
-          <div style="font-size:12px; color:var(--muted)">Reboot</div>
-          <div style="font-size:18px">Unnecessary</div>
+        <div class="crypto-stat">
+          <div class="crypto-label">Security</div>
+          <div class="crypto-value">MAXIMUM</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="card panel">
+      <h2 style="margin:6px 0 20px; font-size:24px; color: var(--brand); text-transform: uppercase; letter-spacing: 1px;">Connect</h2>
+      <p class="lead" style="margin:0 0 20px">Establish connection with the CYPHER_NET network:</p>
+      
+      <div class="crypto-stats">
+        <div class="crypto-stat">
+          <div class="crypto-label">X (Twitter)</div>
+          <div class="crypto-value"><a href="https://x.com/alliedmaster_" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">@alliedmaster_</a></div>
+        </div>
+        <div class="crypto-stat">
+          <div class="crypto-label">GitHub</div>
+          <div class="crypto-value"><a href="https://github.com/alliedmaster" target="_blank" rel="noopener" style="color: var(--brand); text-decoration: none;">alliedmaster</a></div>
+        </div>
+        <div class="crypto-stat">
+          <div class="crypto-label">Status</div>
+          <div class="crypto-value"><a href="#status" style="color: var(--brand); text-decoration: none;">System Status</a></div>
         </div>
       </div>
     </section>
 
     <footer>
-      <div>© <span id="year"></span> AM — Allied Mastercomputer</div>
-      <div><a href="#">Privacy</a> · <a href="#">Terms</a></div>
+      <div>© <span id="year"></span> CYPHER_NET — Decentralized Neural Interface</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Whitepaper</a></div>
     </footer>
   </div>
 
   <script>
     // Set current year
     document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Matrix rain effect
+    function createMatrixRain() {
+      const matrixBg = document.getElementById('matrix-bg');
+      const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+      
+      for (let i = 0; i < 50; i++) {
+        const char = document.createElement('div');
+        char.className = 'matrix-char';
+        char.textContent = chars[Math.floor(Math.random() * chars.length)];
+        char.style.left = Math.random() * 100 + '%';
+        char.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        char.style.animationDelay = Math.random() * 2 + 's';
+        matrixBg.appendChild(char);
+      }
+    }
+    
+    // Animated blockchain stats
+    function animateStats() {
+      const blockHeight = document.getElementById('block-height');
+      const hashRate = document.getElementById('hash-rate');
+      const activeNodes = document.getElementById('active-nodes');
+      
+      let blockCount = 0;
+      let hashCount = 0;
+      let nodeCount = 0;
+      
+      const blockInterval = setInterval(() => {
+        blockCount += Math.floor(Math.random() * 3) + 1;
+        blockHeight.textContent = blockCount.toLocaleString();
+      }, 2000);
+      
+      const hashInterval = setInterval(() => {
+        hashCount += Math.floor(Math.random() * 100) + 50;
+        hashRate.textContent = (hashCount / 1000).toFixed(1) + 'k';
+      }, 1500);
+      
+      const nodeInterval = setInterval(() => {
+        nodeCount = 1337 + Math.floor(Math.random() * 100);
+        activeNodes.textContent = nodeCount.toLocaleString();
+      }, 3000);
+    }
+    
+    // Initialize effects
+    document.addEventListener('DOMContentLoaded', function() {
+      createMatrixRain();
+      animateStats();
+      
+      // Add glitch effect to random elements
+      setInterval(() => {
+        const elements = document.querySelectorAll('.glitch');
+        elements.forEach(el => {
+          el.style.animation = 'none';
+          setTimeout(() => {
+            el.style.animation = 'glitch 0.3s ease-in-out';
+          }, 10);
+        });
+      }, 5000);
+    });
   </script>
 </body>
 </html>
